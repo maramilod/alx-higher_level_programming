@@ -1,8 +1,9 @@
 #include "lists.h"
 /**
- * check_cycle - function
- * @list: list
- * Return: 0 or 1
+ * check_cycle - function check a linked list
+ * @list: the linked list
+ *
+ * Return: 0 if the list has no cycle  or 1 if it has
  */
 int check_cycle(listint_t *list)
 {
@@ -13,7 +14,7 @@ int check_cycle(listint_t *list)
 	f = list;
 	s = list;
 
-	while (list && s && f)
+	while (list && f->next && f)
 	{
 		f = f->next;
 		s = s->next->next;
