@@ -4,4 +4,4 @@ for i in range(99):
     r += str(int(i)) + " = " + str(hex(i))
     if i != 98:
         r += "\n"
-print(r)
+print(f"{r:s}")
