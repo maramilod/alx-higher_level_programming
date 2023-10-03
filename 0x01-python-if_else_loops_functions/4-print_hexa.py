@@ -1,2 +1,7 @@
 #!/usr/bin/python3
-print(*(f"{i} 0x{i:x}" for i in range(99)), sep='\n')
+r = ""
+for i in range(99):
+    r += str(int(i)) + " = " + str(hex(i))
+    if i != 98:
+        r += "\n"
+print(r)
