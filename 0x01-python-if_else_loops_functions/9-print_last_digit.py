@@ -6,3 +6,4 @@ def print_last_digit(number):
     while i > 9:
         i %= 10
     print(i, end="")
+    return i
