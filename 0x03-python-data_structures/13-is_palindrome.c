@@ -19,18 +19,19 @@ int is_palindrome(listint_t **head)
 	num = malloc(sizeof(int) * i);
 	if (num)
 	{
-		for (i = 0; *head; i++)
+		for (j = 0; j <= i; j++)
 		{
-			num[i] = (*head)->n;
+			num[j] = (*head)->n;
 			*head = (*head)->next;
 		}
-		--i;
-		for (j = 0; i >= j; j++)
+		for (j = 0; j <= i / 2; j++)
+		{
 			if (num[j] != num[i - j])
 			{
 				free(num);
 				return (0);
 			}
+		}
 		free(num);
 	}
 	return (1);
