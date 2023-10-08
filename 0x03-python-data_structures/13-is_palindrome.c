@@ -20,8 +20,9 @@ int is_palindrome(listint_t **head)
 		 num[i] = (*head)->n;
 		 *head = (*head)->next;
 	 }
-	for(j = 0; i <= j; i++)
-		if (num[i] != num[j - i])
+	 i--;
+	for(j = 0; i >= j; j++)
+		if (num[j] != num[i - j])
 		{
 			free(num);
 			return (0);
