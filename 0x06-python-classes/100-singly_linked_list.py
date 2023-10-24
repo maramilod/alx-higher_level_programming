@@ -17,7 +17,7 @@ class Node:
 
     @data.setter
     def data(self, val):
-        if type(value) != int:
+        if not isinstance(val, int):
             raise TypeError("data must be an integer")
         self.__data = val
 
@@ -31,7 +31,7 @@ class Node:
     def next_node(self, val):
         if not isinstance(val, Node) and val is not None:
             raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+        self.__next_node = val
 
 
 class SinglyLinkedList:
