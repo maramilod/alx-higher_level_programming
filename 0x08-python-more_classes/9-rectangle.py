@@ -59,15 +59,10 @@ class Rectangle:
 
     def __str__(self):
         """informal string representation of an instance"""
-        hash_reg = ""
-        if self.__width == 0:
-            return hash_reg
-        for i in range(self.__height):
-            for j in range(self.__width):
-                hash_reg += str(self.print_symbol)
-            if i != self.__height - 1:
-                hash_reg += "\n"
-        return hash_reg
+        if not self.width or not self.height:
+            return ""
+        return ((str(self.print_symbol) * self.width + "\n") *
+                self.height)[:-1]
 
     def __repr__(self):
         """formal string representation of an instance"""
