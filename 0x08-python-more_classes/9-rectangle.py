@@ -10,10 +10,7 @@ class Rectangle:
     """R"""
 
     number_of_instances = 0
-    """n"""
-
     print_symbol = "#"
-    """p s"""
 
     def __init__(self, width=0, height=0):
         """i"""
