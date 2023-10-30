@@ -56,9 +56,11 @@ class Rectangle:
     def __str__(self):
         """informal string representation of an instance"""
         hash_reg = ""
-        for i in range(self.height):
-            for j in range(self.width):
+        if self.__width == 0:
+            return hash_reg
+        for i in range(self.__height):
+            for j in range(self.__width):
                 hash_reg += "#"
-            if i != self.height - 1:
+            if i != self.__height - 1:
                 hash_reg += "\n"
         return hash_reg
