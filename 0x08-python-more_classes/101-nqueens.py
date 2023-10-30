@@ -26,10 +26,13 @@ def cal(n):
         d += 1
 
 if __name__ == "__main__":
-    try:
-        n = int(sys.argv[1])
-        cal(n)
-    except IndexError:
-        print("Please provide an integer as a command line argument.")
-    except ValueError:
-        print("The command line argument must be an integer.")
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+    if sys.argv[1].isdigit() is False:
+        print("N must be a number")
+        sys.exit(1)
+    if int(sys.argv[1]) < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+    cal(int(sys.argv[1]))
