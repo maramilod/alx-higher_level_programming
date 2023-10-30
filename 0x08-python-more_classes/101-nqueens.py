@@ -13,8 +13,10 @@ def cal(n):
     """
 
     d = 1
+    li = []
     arr = []
     ar = []
+    arra = []
     for i in range(n):
         x = i
         arr = []
@@ -22,8 +24,19 @@ def cal(n):
             if j != x and j != (n - d):
                 ar = [x, j]
                 arr.append(ar)
-        print(arr)
+        arra.append(arr)
         d += 1
+
+    array = [i for s in arra for i in s]
+    i = 1
+
+    for j in array:
+        li.append(j)
+        i += 1
+        if i == n + 1:
+            print(li)
+            li = []
+    print(li)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
