@@ -58,7 +58,6 @@ class Rectangle:
 
     def __str__(self):
         """s"""
-        string = ""
         if not self.width or not self.height:
             return ""
         return ((str(self.print_symbol) * self.width + "\n") *
