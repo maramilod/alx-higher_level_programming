@@ -1,0 +1,45 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import function from module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test empty:
+  >>> add_integer()
+  Traceback (most recent call last):
+  ...
+  TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test basic:
+  >>> add_integer(1, 1)
+  2
+
+Test only one input:
+  >>> add_integer(2)
+  100
+
+Test float inputs:
+  >>> add_integer(8.8, 4.11)
+  12
+
+Test negative inputs:
+  >>> add_integer(-7, -22.4)
+  -29
+
+Test big numbers:
+  >>> add_integer(7000000000000000, 4000000000000000.6578444)
+  11000000000000000
+
+Test string input:
+  >>> add_integer("88")
+  Traceback (most recent call last):
+  TypeError: a must be an integer
+
+Test None:
+  >>> add_integer(None)
+  Traceback (most recent call last):
+  TypeError: a must be an integer
