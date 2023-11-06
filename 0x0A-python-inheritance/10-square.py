@@ -15,6 +15,6 @@ class Square(R):
         self.__size = size
         super().__init__(size, size)
 
-    def area(self)
-    """a"""
-    return self.__size ** 2
+    def area(self):
+        """a"""
+        return self.__size ** 2
