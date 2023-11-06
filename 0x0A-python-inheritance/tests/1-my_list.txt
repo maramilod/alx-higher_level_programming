@@ -6,6 +6,11 @@ Type test:
     >>> type(m) == MyList
     True
 
+Correct Instance test:
+    >>> ml = MyList()
+    >>> isinstance(ml, list)
+    True
+
 print_sorted method is an instance method:
     >>> type(MyList.__dict__['print_sorted'])
     <class 'function'>
