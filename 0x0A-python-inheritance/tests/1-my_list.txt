@@ -1,0 +1,3 @@
+Test:
+>>>print(my_list.append(1))
+[1]
