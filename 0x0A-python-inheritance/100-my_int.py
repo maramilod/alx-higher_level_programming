@@ -16,6 +16,6 @@ class MyInt(int):
         """ne"""
         return int(self) != other
 
-    def __nq__(self, other):
+    def __ne__(self, other):
         """eq"""
         return int(self) == other
