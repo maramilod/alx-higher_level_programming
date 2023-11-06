@@ -22,5 +22,5 @@ class Rectangle(B):
 
     def __str__(self):
         """s"""
-        return "[Rectangle]" +
-    " {}/{}".format(str(self.__width), str(self.__height))
+        return "[Rectangle] {}/{}".format(
+                str(self.__width), str(self.__height))
