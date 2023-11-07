@@ -11,8 +11,8 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r', encoding="utf-8") as m:
         line = []
         while True:
-            li = f.readline()
-            if line == "":
+            li = m.readline()
+            if li == "":
                 break
             line.append(li)
             if search_string in li:
