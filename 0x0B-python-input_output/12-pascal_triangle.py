@@ -14,7 +14,7 @@ def pascal_triangle(n):
     while len(l) in range(n):
         t = l[-1]
         te = [1]
-        while i in range(len(t) - 1):
+        for i in range(len(t) - 1):
             te.append(t[i] + t[i + 1])
         te.append(1)
         l.append(te)
