@@ -23,7 +23,7 @@ class Student:
         except Exception:
             return self.__dict__
         dr = dict()
-        for k, v in self.__dict__items:
+        for k, value in self.__dict__.items():
             if k in attrs:
-                dr[k] = v
+                dr[k] = value
         return dr
