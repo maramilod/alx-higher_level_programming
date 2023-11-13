@@ -88,3 +88,16 @@ class Rectangle(Base):
         """overriding"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """updated data"""
+        if len(args) == 5:
+            self.id, self.width, self.height, self.x, self.y = args
+        elif len(args) == 4:
+            self.id, self.width, self.height, self.x = args
+        elif len(args) == 3:
+            self.id, self.width, self.height = args
+        elif len(args) == 2:
+            self.id, self.width = args
+        elif len(args) == 1:
+            self.id = args[0]
