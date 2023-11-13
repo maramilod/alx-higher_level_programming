@@ -29,12 +29,12 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-     @staticmethod
+    @staticmethod
     def from_json_string(json_string):
         '''Unjsonifies a dictionary.'''
         if json_string is None or not json_string:
             return []
-        return loads(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
