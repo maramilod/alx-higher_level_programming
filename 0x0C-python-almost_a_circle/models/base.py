@@ -36,24 +36,24 @@ class Base:
     def save_to_file(cls, list_objs):
         """"dict to file"""
         name = cls.__name__
-        ls = []
+        newl = []
         if list_objs is not None:
-            for a in list_objs:
-                ls.append(a.to_dictionary())
-        with open(name + ".json", "w+", encoding="utf-8") as file:
-            file.write(Base.to_json_string(ls))
+            for i in list_objs:
+                newl.append(i.to_dictionary())
+        with open(name + ".json", "w+", encoding="utf-8") as f:
+            f.write(Base.to_json_string(newl))
 
     @staticmethod
     def from_json_string(json_string):
         """"dict to json"""
-        a = json_string
-        if a is None or type(a) is not str or len(a) == 0:
+        m = json_string
+        if m is None or type(m) is not str or len(m) == 0:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """"crates new obj"""
+        """"crates new object"""
         name = cls.__name__
         if name == "Rectangle":
             tmp = cls(1, 1)
@@ -66,7 +66,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """"crates new obj from avlues in file"""
+        """"new obj"""
         name = cls.__name__ + ".json"
         if not exists(name):
             return []
