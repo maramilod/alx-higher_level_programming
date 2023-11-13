@@ -114,3 +114,8 @@ class Rectangle(Base):
                 if k == "id":
                     self.id = v
 
+    def to_dictionary(self):
+        """d"""
+        di = {"x": self.x, "y": self.y, "id": self.id, 
+                "height": self.height, "width": self.width}
+        return di
