@@ -57,10 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """setter"""
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -91,16 +93,18 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """updated data"""
-        if len(args) >= 5:
-            self.id, self.width, self.height, self.x, self.y = args
-        elif len(args) == 4:
-            self.id, self.width, self.height, self.x = args
-        elif len(args) == 3:
-            self.id, self.width, self.height = args
-        elif len(args) == 2:
-            self.id, self.width = args
-        elif len(args) == 1:
-            self.id = args[0]
+
+        if args is not None and len(args) != 0:
+            if len(args) >= 5:
+                self.id, self.width, self.height, self.x, self.y = args
+            elif len(args) == 4:
+                self.id, self.width, self.height, self.x = args
+            elif len(args) == 3:
+                self.id, self.width, self.height = args
+            elif len(args) == 2:
+                self.id, self.width = args
+            elif len(args) == 1:
+                self.id = args[0]
         else:
             for k, v in kwargs.items():
                 if k == "width":
@@ -117,10 +121,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """d"""
         di = {
+                "id": self.id,
+                "width": self.width
+                "height": self.height,
                 "x": self.x,
                 "y": self.y,
-                "id": self.id,
-                "height": self.height,
-                "width": self.width
                 }
         return di
