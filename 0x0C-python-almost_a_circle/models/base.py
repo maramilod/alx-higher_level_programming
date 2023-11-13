@@ -2,12 +2,10 @@
 """
 this class will be
 the base of all other
-classes in this project
-to manage id attribute
-and avoid duplicating
+classes in this
 """
 import json
-import csv
+
 
 class Base:
     """ the base of python package """

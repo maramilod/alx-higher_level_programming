@@ -4,7 +4,8 @@ h
 e
 y
 """
-from models.rectangle  import Rectangle
+from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """sup class"""
@@ -39,7 +40,7 @@ class Square(Rectangle):
         elif len(args) == 1:
             self.id = args[0]
         else:
-            for k , v in kwargs.items():
+            for k, v in kwargs.items():
                 if k == "size":
                     self.width = v
                 if k == "x":
@@ -51,6 +52,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """d"""
-        di = {"id": self.id, "x": self.x, 'size': self.width,
-                "y": self.y}
+        di = {
+                "id": self.id,
+                "x": self.x,
+                "size": self.width,
+                "y": self.y
+                }
         return di

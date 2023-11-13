@@ -102,7 +102,7 @@ class Rectangle(Base):
         elif len(args) == 1:
             self.id = args[0]
         else:
-            for k , v in kwargs.items():
+            for k, v in kwargs.items():
                 if k == "width":
                     self.width = v
                 if k == "height":
@@ -116,6 +116,11 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """d"""
-        di = {"x": self.x, "y": self.y, "id": self.id, 
-                "height": self.height, "width": self.width}
+        di = {
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
+                }
         return di
