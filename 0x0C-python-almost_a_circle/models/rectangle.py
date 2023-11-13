@@ -122,7 +122,7 @@ class Rectangle(Base):
         """d"""
         di = {
                 "id": self.id,
-                "width": self.width
+                "width": self.width,
                 "height": self.height,
                 "x": self.x,
                 "y": self.y,
