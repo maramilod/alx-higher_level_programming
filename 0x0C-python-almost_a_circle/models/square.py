@@ -1,63 +1,57 @@
 #!/usr/bin/python3
-"""
-h
-e
-y
-"""
+"""Square class module"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """sup class"""
+    """Square class sup from rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor"""
+        """class constructior"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """s"""
+        """width getter"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """s"""
+        """width setter"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """'Returns string info about this square"""
-        return "[Square] ({}) {}/{} - {}".format(
-                self.id, self.x, self.y,
-                self.width)
+        """returns formated string of the obj"""
+        id = self.id
+        size = self.width
+        x = self.x
+        y = self.y
+        return "[Square] ({}) {}/{} - {}".format(id, x, y, size)
 
     def update(self, *args, **kwargs):
-        """Updates instance attributes via no-keyword & keyword args"""
+        """updates obj attrs"""
         if args is not None and len(args) != 0:
-            if len(args) >= 4:
-                self.id, self.width, self.x, self.y = args
-            elif len(args) == 3:
-                self.id, self.width, self.x = args
-            elif len(args) == 2:
-                self.id, self.width = args
-            elif len(args) == 1:
+            a = len(args)
+            if a >= 1:
                 self.id = args[0]
+            if a >= 2:
+                self.size = args[1]
+            if a >= 3:
+                self.x = args[2]
+            if a >= 4:
+                self.y = args[3]
         else:
-            for k, v in kwargs.items():
-                if k == "size":
-                    self.width = v
-                if k == "x":
-                    self.x = v
-                if k == "y":
-                    self.y = v
-                if k == "id":
-                    self.id = v
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Returns dictionary representation of this class"""
-        return {
-                "id": self.id,
-                "size": self.width,
-                "x": self.x,
-                "y": self.y
-                }
+        """returns the object as a dict"""
+        return {"id": self.id, "size": self.size,
+                "x": self.x, "y": self.y}
