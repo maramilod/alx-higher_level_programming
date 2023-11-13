@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-"""
-h
-e
-y
-"""
+"""Square class module"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """sup class"""
+    """Square class sup from rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """constructior i n i t"""
+        """class constructior"""
         super().__init__(size, size, x, y, id)
 
     @property
@@ -26,7 +22,7 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """formated string"""
+        """returns formated string of the obj"""
         id = self.id
         size = self.width
         x = self.x
@@ -34,7 +30,7 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(id, x, y, size)
 
     def update(self, *args, **kwargs):
-        """updates"""
+        """updates obj attrs"""
         if args is not None and len(args) != 0:
             a = len(args)
             if a >= 1:
@@ -56,6 +52,6 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """dict"""
+        """returns the object as a dict"""
         return {"id": self.id, "size": self.size,
                 "x": self.x, "y": self.y}
