@@ -72,10 +72,16 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """draw rectangle"""
+        """'update' draw rectangle"""
+        self.width += self.x
+        for y in range(self.y):
+            print()
         for i in range(self.height):
             for j in range(self.width):
-                print("#", end="")
+                if j >= self.x:
+                    print("#", end="")
+                else:
+                    print(" ", end="")
             print()
 
     def __str__(self):
