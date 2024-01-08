@@ -16,5 +16,5 @@ if (len > 3) {
   }
   console.log(secB);
 } else {
-  console.log(len);
+  console.log(0);
 }
