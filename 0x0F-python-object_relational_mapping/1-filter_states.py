@@ -11,7 +11,7 @@ def main():
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
                 ORDER BY id ASC;")
-    fetcha = cur.fetchall()
+    fetcha = cursor.fetchall()
     for fetch in fetcha:
         print(fetch)
     cursor.close()
