@@ -6,10 +6,11 @@ y
 """
 from sys import argv
 import MySQLdb
+h = "localhost"
 
 
 def main():
-    db = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2], db=argv[3])
+    db = MySQLdb.connect(host=h, user=argv[1], passwd=argv[2], db=argv[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id;")
     fall = cur.fetchall()
