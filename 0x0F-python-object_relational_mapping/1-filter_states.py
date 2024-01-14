@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """ hey"""
-from sys import argv
 import MySQLdb
-h = "localhost"
+from sys import argv
+host = "localhost"
 
 
 def main():
-    db = MySQLdb.connect(host=h, user=argv[1], port=3306,
+    db = MySQLdb.connect(host=host, user=argv[1], port=3306,
                          passwd=argv[2], db=argv[3])
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
                 ORDER BY id ASC;")
-    fetcha = cursor.fetchall()
-    for fetch in fetcha:
-        print(fetch)
-    cursor.close()
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
     db.close()
 
 
