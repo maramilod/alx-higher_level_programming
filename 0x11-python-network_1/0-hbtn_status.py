@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""hey"""
+
 import urllib.request
 
 try:
@@ -10,4 +12,3 @@ try:
         print("\t- utf8 content: {}".format(f.decode()))
 except Exception as e:
     print("An error occurred: {}".format(str(e)))
-
